@@ -2,7 +2,7 @@ import CalendlyWidget from "@/components/features/homepage/CalendlyWidget";
 
 import HeroSection from "@/components/features/HeroSection";
 import Navbar from "@/components/features/Navbar";
-import PartnerSection from "@/components/features/homepage/PartnerSection";
+
 import ProcessSection from "@/components/features/homepage/ProcessSection";
 import QuoteSection from "@/components/features/homepage/QuoteSection";
 import SCS02 from "@/components/features/homepage/SCS02";
