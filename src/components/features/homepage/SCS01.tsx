@@ -32,8 +32,8 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
         <div className="above-border-content">
           <h2 className="section-header">Our AI for Enterprises Offerings</h2>
           <p className="section-description">
-            Imodata empowers enterprises with GenAI-driven digital transformation—developing, 
-            implementing, and managing AI solutions that boost productivity, cut costs, and streamline 
+            Persimium empowers enterprises with AI-driven digital transformation, 
+            implementation, and managing custom solutions that boost revenue, cut costs, and streamline 
             workflows. Our AI for Enterprises offering includes three key components:
           </p>
           <button className="talk-to-expert-btn" onClick={handleTalkToExpertClick}> {/* Add onClick */}
@@ -62,14 +62,14 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
           <div className="left-content">
             {/* Title */}
-            <h2 className="main-title">Marketing & Systems Automation</h2>
+            <h2 className="main-title">Systems Automation</h2>
 
             {/* Subtitle */}
             <h3 className="subtitle">Optimize Business Operations. Streamline Workflows. Drive Efficiency.</h3>
 
             {/* Description */}
             <p className="description">
-            Deploy intelligent, tailored AI solutions to enhance operational efficiency, automate routine tasks, and significantly reduce manual overhead. Our solutions transform process execution into a scalable productivity enabler.
+            Deploy intelligent, tailored AI solutions to leverage operational efficiency, automate routine tasks, and significantly reduce manual overhead. Our solutions turn process execution into a scalable productivity enabler.
             </p>
 
             {/* Learn More Button */}
@@ -95,19 +95,15 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
               <div className="bullet-points">
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Define</strong> precise workflow automation flows to maximize objective attainment and operational efficiency.
-
-</span>
+                  <span><strong>Define</strong> precise workflow automation flows to maximize objective attainment and operational efficiency.</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Integrate</strong> proprietary data sources for robust, domain-specific knowledge retrieval and decision-making.
-</span>
+                  <span><strong>Integrate</strong> proprietary data sources for robust, domain-specific knowledge retrieval and decision-making.</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Engineer</strong> custom automation logic to align with business rules and targeted operational needs.
-                  </span>
+                  <span><strong>Engineer</strong> custom automation logic to align with business rules and targeted operational needs.</span>
                 </div>
               </div>
             </div>
@@ -215,7 +211,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
         .left-section {
           flex: 1;
-          padding: 3rem 0.5rem 2rem 3rem;
+          padding: 3rem 0.5rem 3rem 3rem;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -233,7 +229,6 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           margin-top: -50px; /* Add this to move image 5px higher */
           margin-bottom: 0.5rem; /* Add this - reduces space below image */
         }
-
 
         /* REVERTED IMAGE WITH SHADOW - FIXED SIZING */
         .image-with-shadow {
@@ -345,7 +340,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
         .right-section {
           flex: 1.2;
-          padding: 3rem 3rem 2rem 4rem;
+          padding: 3rem 3rem 3rem 4rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -379,14 +374,16 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
         }
 
         .bullet-item {
-          font-family: 'Inter', sans-serif;
-          display: flex;
-          align-items: flex-start;
-          gap: 0.5rem;
-          font-size: 1.1rem;
-          line-height: 1.5;
-          font-weight: 400;
-        }
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a202c; /* Add this line for black text */
+}
+
 
         .bullet {
           color: #3182ce;
@@ -439,7 +436,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
           .left-section {
             justify-content: flex-start;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 3rem 1.5rem;
             gap: 2rem;
             align-items: center;
           }
@@ -450,7 +447,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           }
 
           .right-section {
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 3rem 1.5rem;
           }
 
           .main-title {
@@ -471,8 +468,10 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           }
 
           .bullet-item {
-            font-size: 1rem;
-          }
+  font-size: 1rem;
+  color: #1a202c; /* Add this line for black text on mobile too */
+}
+
 
           .right-content {
             gap: 1.5rem;

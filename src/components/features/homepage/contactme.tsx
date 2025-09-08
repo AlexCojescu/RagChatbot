@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -48,10 +47,10 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-xl border-0 sm:border bg-white/95 sm:bg-white/90 backdrop-blur-sm shadow-md sm:shadow-sm">
+    <Card className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-xl border-2 border-gray-800 sm:border-gray-800 bg-white/95 sm:bg-white/90 backdrop-blur-sm shadow-md sm:shadow-sm">
       <CardHeader className="text-center px-4 sm:px-6 py-4 sm:py-6">
-        <CardTitle className="text-2xl sm:text-3xl">Contact Us</CardTitle>
-        <CardDescription className="mx-auto text-sm sm:text-base">
+        <CardTitle className="text-2xl sm:text-3xl text-black">Contact Us</CardTitle>
+        <CardDescription className="mx-auto text-sm sm:text-base text-gray-700">
           Fill out the form below and we&apos;ll get back to you as soon as possible.
         </CardDescription>
       </CardHeader>
@@ -64,13 +63,13 @@ export default function ContactForm() {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium">First Name</FormLabel>
+                    <FormLabel className="text-sm font-medium text-black">First Name</FormLabel>
                     <FormControl>
                       <Input 
                         placeholder="Your first name" 
                         {...field} 
                         disabled={isPending}
-                        className="h-10 sm:h-11"
+                        className="h-10 sm:h-11 border-2 border-gray-600 text-black placeholder:text-gray-500"
                       />
                     </FormControl>
                     <FormMessage />
@@ -82,13 +81,13 @@ export default function ContactForm() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium">Last Name</FormLabel>
+                    <FormLabel className="text-sm font-medium text-black">Last Name</FormLabel>
                     <FormControl>
                       <Input 
                         placeholder="Your last name" 
                         {...field} 
                         disabled={isPending}
-                        className="h-10 sm:h-11"
+                        className="h-10 sm:h-11 border-2 border-gray-600 text-black placeholder:text-gray-500"
                       />
                     </FormControl>
                     <FormMessage />
@@ -101,13 +100,13 @@ export default function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Email</FormLabel>
+                  <FormLabel className="text-sm font-medium text-black">Email</FormLabel>
                     <FormControl>
                       <Input 
                         placeholder="Your Email" 
                         {...field} 
                         disabled={isPending}
-                        className="h-10 sm:h-11"
+                        className="h-10 sm:h-11 border-2 border-gray-600 text-black placeholder:text-gray-500"
                       />
                     </FormControl>
                     <FormMessage />
@@ -119,11 +118,11 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm font-medium">Message</FormLabel>
+                    <FormLabel className="text-sm font-medium text-black">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Type your message here"
-                        className="min-h-[120px] sm:min-h-[160px] resize-none"
+                        className="min-h-[120px] sm:min-h-[160px] resize-none border-2 border-gray-600 text-black placeholder:text-gray-500"
                         {...field}
                         disabled={isPending}
                       />
@@ -135,8 +134,8 @@ export default function ContactForm() {
                {submissionStatus && (
                 <div className={`text-sm p-3 rounded-md ${
                   submissionStatus.success 
-                    ? 'text-green-700 bg-green-50 border border-green-200' 
-                    : 'text-red-700 bg-red-50 border border-red-200'
+                    ? 'text-green-700 bg-green-50 border-2 border-green-300' 
+                    : 'text-red-700 bg-red-50 border-2 border-red-300'
                 }`}>
                   {submissionStatus.message}
                 </div>
@@ -144,7 +143,7 @@ export default function ContactForm() {
               <div className="flex justify-center pt-2">
                 <Button 
                   type="submit" 
-                  className="w-full sm:w-1/2 h-11 font-medium" 
+                  className="w-full sm:w-1/2 h-11 font-medium bg-gray-800 text-white hover:bg-gray-900 border-2 border-gray-800" 
                   disabled={isPending}
                 >
                   {isPending ? 'Submitting...' : 'Submit'}

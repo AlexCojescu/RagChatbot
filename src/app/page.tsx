@@ -1,17 +1,17 @@
-import CalendlyWidget from "@/components/features/CalendlyWidget";
+import CalendlyWidget from "@/components/features/homepage/CalendlyWidget";
 
 import HeroSection from "@/components/features/HeroSection";
 import Navbar from "@/components/features/Navbar";
-import PartnerSection from "@/components/features/PartnerSection";
-import ProcessSection from "@/components/features/ProcessSection";
-import QuoteSection from "@/components/features/QuoteSection";
-import SCS02 from "@/components/features/SCS02";
-import SCS03 from "@/components/features/SCS03";
+import PartnerSection from "@/components/features/homepage/PartnerSection";
+import ProcessSection from "@/components/features/homepage/ProcessSection";
+import QuoteSection from "@/components/features/homepage/QuoteSection";
+import SCS02 from "@/components/features/homepage/SCS02";
+import SCS03 from "@/components/features/homepage/SCS03";
 import { Separator } from "@/components/features/Seperator";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import SCS01 from "@/components/features/SCS01";
-import SCS04 from "@/components/features/SCS04";
-import Contactme from "@/components/features/contactme";
+import SCS01 from "@/components/features/homepage/SCS01";
+import SCS04 from "@/components/features/homepage/SCS04";
+import Contactme from "@/components/features/homepage/contactme";
 import CalmImageSection from "@/components/features/CalmImageSection";
 import ChatbotWidget from "./ui/chat-widget/page";
 
@@ -69,8 +69,7 @@ export default function Page() {
         <SCS04 />
 
         <Separator />
-        <PartnerSection />
-        <Separator />
+        
 
         {/* OPTIMIZED CONTACT SECTION */}
         <div className="bg-white py-16 px-4">

@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 
 // Component Imports
 import Navbar from "@/components/features/Navbar";
-import LeadGen from "@/components/features/LeadGen";
-import TechStackSection from "@/components/features/TechStackSection";
-import AutomationSection from "@/components/features/AutomationSection";
-import WebDev from "@/components/features/WebDev";
-import ServicesHeader from '@/components/features/ServicesHeader';
+import LeadGen from "@/components/features/servicepage/LeadGen";
+import TechStackSection from "@/components/features/servicepage/TechStackSection";
+import AutomationSection from "@/components/features/servicepage/AutomationSection";
+import WebDev from "@/components/features/servicepage/WebDev";
+import ServicesHeader from '@/components/features/servicepage/ServicesHeader';
 
 // REMOVED: The 'servicesData' array and the 'ServiceSection' component have been removed.
 

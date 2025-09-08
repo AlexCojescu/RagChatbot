@@ -30,12 +30,12 @@ const Header: React.FC = () => {
       description: "Receive high-intent contacts, turning buyers into conversations"
     },
     {
-      icon: "✨",
-      title: "Generative Content Creation",
-      description: "AI-powered content generation across multiple formats"
+      icon: "🚀",
+      title: "Web Development",
+      description: "Custom-built, high-performance websites and web applications designed for speed, scalability, and seamless user experience."
     },
     {
-      icon: "⚡",
+      icon: "✨",
       title: "Process Automation",
       description: "Technology to execute systemic tasks and entire workflows automatically"
     },
@@ -100,15 +100,15 @@ const Header: React.FC = () => {
   const serviceCardBaseStyle: React.CSSProperties = {
     ...commonStyles,
     display: 'flex',
-    alignItems: 'flex-start',
-    gap: '1rem',
-    padding: isMobile ? '1rem' : '1.5rem',
-    borderRadius: '1rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    border: '1px solid #f3f4f6',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer'
-  };
+  alignItems: 'flex-start',
+  gap: '1rem',
+  padding: isMobile ? '1rem' : '1.5rem',
+  borderRadius: '1rem',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  border: '1px solid #d1d5db', // Changed from #f3f4f6 to darker gray
+  transition: 'all 0.3s ease',
+  cursor: 'pointer'
+};
 
   const iconContainerStyle: React.CSSProperties = {
     flexShrink: 0,
@@ -237,7 +237,7 @@ const Header: React.FC = () => {
         <div>
           <p style={descriptionStyle}>
             Integrate advanced agentic and generative AI capabilities to elevate decision making 
-            across sectors such as manufacturing, energy, healthcare, and financial services.
+            across sectors such as remodeling, renovating, energy, and financial services.
           </p>
         </div>
 

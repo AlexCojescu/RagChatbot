@@ -350,14 +350,16 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
         }
 
         .bullet-item {
-          font-family: 'Inter', sans-serif;
-          display: flex;
-          align-items: flex-start;
-          gap: 0.5rem;
-          font-size: 1.1rem;
-          line-height: 1.5;
-          font-weight: 400;
-        }
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a202c; /* Add this line for black text */
+}
+
 
         .bullet {
           color: #3182ce;
@@ -442,8 +444,10 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           }
 
           .bullet-item {
-            font-size: 1rem;
-          }
+  font-size: 1rem;
+  color: #1a202c; /* Add this line for black text on mobile too */
+}
+
 
           .right-content {
             gap: 1.5rem;

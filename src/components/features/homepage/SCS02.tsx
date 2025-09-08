@@ -10,13 +10,13 @@ interface StrategyConsultingSectionProps {
 }
 
 const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
-  imageSource = "/agent03.png",
+  imageSource = "/agent02.png",
   imageAlt = "Service 01 illustration",
   className = ""
 }) => {
   return (
     <section className={`strategy-consulting-container ${className}`}>
-
+   
 
       {/* EXISTING BORDERED CARD */}
       <div className="strategy-consulting-card">
@@ -28,7 +28,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
               <Image
                 src={imageSource}
                 alt={imageAlt}
-                width={250}
+                width={290}
                 height={130}
                 className="top-image"
               />
@@ -38,14 +38,14 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
           <div className="left-content">
             {/* Title */}
-            <h2 className="main-title">Customized Chatbot Solutions</h2>
+            <h2 className="main-title">Intent-Driven Lead Generation</h2>
 
             {/* Subtitle */}
-            <h3 className="subtitle">Optimize Customer Interactions. Streamline Support. Drive Efficiency.</h3>
+            <h3 className="subtitle">Pinpoint Your Ideal Customer, Identify & Research Decision-Makers, Receive Custom-Crafted Icebreakers</h3>
 
             {/* Description */}
             <p className="description">
-            Deploy intelligent, tailored AI agents to enhance customer engagement, automate routine inquiries, and significantly reduce operational overhead. Our solutions transform service delivery into a scalable revenue enabler.
+            We deliver a steady stream of high-intent leads, complete with personalized icebreakers, so you can focus on one thing: closing deals.
             </p>
 
             {/* Learn More Button */}
@@ -66,21 +66,19 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           <div className="right-content">
             {/* First Section */}
             <div className="content-block">
-              <h3 className="block-title">1. Strategic AI Agent Design</h3>
+              <h3 className="block-title">1. Precision Prospect Acquisition</h3>
               <div className="bullet-points">
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Define</strong> precise conversational flows to maximize objective attainment and user satisfaction.</span>
+                  <span><strong>Identify</strong> high-value prospects and decision-makers through robust intent signal analysis.</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Integrate</strong> proprietary data sources for robust, domain-specific knowledge retrieval.
-
-</span>
+                  <span><strong>Qualify</strong>  leads efficiently by leveraging data-driven propensity scoring.</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Engineer</strong> custom chatbot personas to align with brand voice and targeted customer segments.
+                  <span><strong>Strategically</strong> segment target accounts to maximize resource allocation and return on investment.
 
 </span>
                 </div>
@@ -89,27 +87,29 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
 
             {/* Second Section */}
             <div className="content-block">
-              <h3 className="block-title">2. Seamless Deployment & Integration</h3>
+              <h3 className="block-title">2. Automated Engagement & Conversion</h3>
               <div className="bullet-points">
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Facilitate</strong> rapid deployment across all designated customer touchpoints (e.g., web, mobile, messaging platforms).</span>
+                  <span><strong>Automate</strong> context-specific initial outreach for accelerated prospect engagement.
+
+</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Ensure</strong> robust, bidirectional integration with existing CRM, ERP, and support system infrastructures.</span>
+                  <span><strong>Deploy</strong> multi-channel campaigns for consistent lead nurturing and pipeline progression.
+
+</span>
                 </div>
                 <div className="bullet-item">
                   <span className="bullet">•</span>
-                  <span><strong>Implement</strong> scalable architectures to accommodate fluctuating user volume and ensure consistent performance.</span>
+                  <span><strong>Integrate</strong> seamlessly with CRM and sales platforms to enhance operational efficiency.</span>
                 </div>
               </div>
             </div>
           </div>
-          </div>
+        </div>
       </div>
-
-
 
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -207,7 +207,7 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
   flex-shrink: 0;
   width: 100%;
   margin-left: 40px;
-  margin-top: -30px; /* Add this to move image 5px higher */
+  margin-top: -50px; /* Add this to move image 5px higher */
   margin-bottom: 0.5rem; /* Add this - reduces space below image */
 }
 
@@ -356,14 +356,16 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
         }
 
         .bullet-item {
-          font-family: 'Inter', sans-serif;
-          display: flex;
-          align-items: flex-start;
-          gap: 0.5rem;
-          font-size: 1.1rem;
-          line-height: 1.5;
-          font-weight: 400;
-        }
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a202c; /* Add this line for black text */
+}
+
 
         .bullet {
           color: #3182ce;
@@ -448,8 +450,10 @@ const StrategyConsultingSection: React.FC<StrategyConsultingSectionProps> = ({
           }
 
           .bullet-item {
-            font-size: 1rem;
-          }
+  font-size: 1rem;
+  color: #1a202c; /* Add this line for black text on mobile too */
+}
+
 
           .right-content {
             gap: 1.5rem;

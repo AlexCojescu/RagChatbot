@@ -1,6 +1,6 @@
-import ContactForm from "@/components/features/contactme";
+import ContactForm from "@/components/features/homepage/contactme";
 import Navbar from "@/components/features/Navbar";
-import CalendlyWidget from "@/components/features/CalendlyWidget";
+import CalendlyWidget from "@/components/features/homepage/CalendlyWidget";
 import ContactHeader from "@/components/features/ContactHeader";
 import ContactFooter from "@/components/features/ContactFooter";
 
