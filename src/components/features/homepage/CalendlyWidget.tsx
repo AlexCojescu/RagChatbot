@@ -7,7 +7,7 @@ const CalendlyWidget = () => {
   useEffect(() => {
     // Ensure Calendly script is loaded
     const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.src = 'https://calendly.com/programmaticit/programmatic-it-com';
     script.async = true;
     document.body.appendChild(script);
 
@@ -19,7 +19,7 @@ const CalendlyWidget = () => {
   return (
     <div className="calendly-container h-[700px] w-full">
       <InlineWidget 
-        url="https://calendly.com/alexcojescu/automation-strategy"
+        url="https://calendly.com/programmaticit/programmatic-it-com"
         styles={{
           height: '100%',
           width: '100%',

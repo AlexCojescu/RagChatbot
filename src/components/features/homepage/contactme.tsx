@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/contactui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/contactui/card";
+import { Input } from "@/components/contactui/input";
+import { Textarea } from "@/components/contactui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
@@ -12,7 +12,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/contactui/form";
 import { z } from 'zod';
 import { formSchema } from "@/lib/schemas";
 import { send } from "@/lib/email";

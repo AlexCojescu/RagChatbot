@@ -13,7 +13,7 @@ import SCS01 from "@/components/features/homepage/SCS01";
 import SCS04 from "@/components/features/homepage/SCS04";
 import Contactme from "@/components/features/homepage/contactme";
 import CalmImageSection from "@/components/features/CalmImageSection";
-import ChatbotWidget from "./ui/chat-widget/page";
+import ChatbotWidget from "../components/chatbotui/chat-widget/page";
 
 
 
@@ -100,6 +100,8 @@ export default function Page() {
               <div className="w-full">
                 <div className="max-w-xl mx-auto">
                   <Contactme />
+
+                  
 
                   <ChatbotWidget />
 

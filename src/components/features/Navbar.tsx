@@ -57,6 +57,8 @@ const Navbar = () => {
             About
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
+
+          
           
           {/* REPLACED: The entire dropdown div is now a single, simple Link. */}
           <Link 
@@ -67,6 +69,10 @@ const Navbar = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
+          <a href="/pricing" className="text-gray-800 hover:text-purple-600 transition-colors duration-200 cursor-pointer relative group font-medium">
+            Pricing
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+          </a>
          
           <Link
             href="/contact"

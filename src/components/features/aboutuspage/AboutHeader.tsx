@@ -58,7 +58,7 @@ const ServicesHeader = () => {
             variants={itemVariants}
             className="text-7xl sm:text-8xl lg:text-9xl font-light text-gray-900 tracking-tighter"
           >
-            Services
+            About Us
           </motion.h1>
 
           {/* Navigation Links Container */}

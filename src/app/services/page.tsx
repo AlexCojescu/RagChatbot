@@ -1,86 +1,196 @@
 'use client';
 
-import React from 'react';
-// REMOVED: Lenis, useScroll, useTransform, and other animation-specific imports are no longer needed.
-import { motion } from 'framer-motion';
+import React, { useEffect, useMemo, Suspense } from 'react';
+import { LazyMotion, domAnimation, m, Transition, Variants } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import Lenis from 'lenis';
 
-// Component Imports
+// Component Imports - Optimized with dynamic imports for non-critical components
 import Navbar from "@/components/features/Navbar";
-import LeadGen from "@/components/features/servicepage/LeadGen";
-import TechStackSection from "@/components/features/servicepage/TechStackSection";
-import AutomationSection from "@/components/features/servicepage/AutomationSection";
-import WebDev from "@/components/features/servicepage/WebDev";
 import ServicesHeader from '@/components/features/servicepage/ServicesHeader';
+import { Separator } from '@/components/features/Seperator';
 
-// REMOVED: The 'servicesData' array and the 'ServiceSection' component have been removed.
+// Lazy-loaded components for better initial page load performance
+const LeadGen = dynamic(() => import("@/components/features/servicepage/LeadGen"), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-32" />,
+  ssr: true
+});
 
-// --- Main Page Component (MODIFIED) ---
+const TechStackSection = dynamic(() => import("@/components/features/servicepage/TechStackSection"), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-40" />,
+  ssr: true
+});
+
+const AutomationSection = dynamic(() => import("@/components/features/servicepage/AutomationSection"), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-32" />,
+  ssr: true
+});
+
+const WebDev = dynamic(() => import("@/components/features/servicepage/WebDev"), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-36" />,
+  ssr: true
+});
+
+const ChatbotWidget = dynamic(() => import("../../components/chatbotui/chat-widget/page"), {
+  loading: () => <div className="animate-pulse bg-blue-100 rounded-lg h-12 w-32" />,
+  ssr: false // Chatbot doesn't need SSR
+});
+
+// Type-safe Lenis configuration interface
+interface LenisOptions {
+  lerp?: number;
+  duration?: number;
+  easing?: (t: number) => number;
+  touchMultiplier?: number;
+}
+
+// Memoized hook for Lenis initialization
+const useLenisScroll = () => {
+  useEffect(() => {
+    const lenisOptions: LenisOptions = {
+      lerp: 0.1,
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2
+    };
+
+    const lenis = new Lenis(lenisOptions);
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+    
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+};
+
+// Type-safe animation variants
+const sectionVariants: Variants = {
+  initial: { 
+    opacity: 0, 
+    y: 20 
+  },
+  whileInView: { 
+    opacity: 1, 
+    y: 0 
+  }
+};
+
+const sectionTransition: Transition = {
+  duration: 0.5,
+  ease: "easeOut"
+};
+
+// --- Main Page Component ---
 export default function Page() {
-  // REMOVED: The useEffect for Lenis smooth scrolling is gone.
+  useLenisScroll();
+
+  const memoizedAnimations = useMemo(() => ({
+    section: {
+      variants: sectionVariants,
+      viewport: { once: true, amount: 0.15 },
+      transition: sectionTransition
+    }
+  }), []);
 
   return (
-    <div className="bg-white">
-      <Navbar />
+    <LazyMotion features={domAnimation}>
+      <div className="bg-white">
+        <Navbar />
 
-      {/* The ServicesHeader remains at the top */}
-      <ServicesHeader />
+        <ServicesHeader />
 
-      {/* NEW SECTION: This is the new container for all your service components.
-        It's designed to be added as a single block to your page.
-      */}
-      {/* MODIFIED: Changed bg-gray-50/50 to bg-white to remove the gray background */}
-      <main className="bg-white py-20 sm:py-24">
-        {/* MODIFIED: Removed max-w-4xl and mx-auto to make this container full-width */}
-        <div className="px-6 space-y-20 sm:space-y-24">
+    
+
+        <main className="bg-white py-20 sm:py-24">
           
-          {/* Each service component is now an individual section with an ID for potential deep-linking */}
-          <motion.section 
-            id="web-development"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            <WebDev />
-          </motion.section>
+          <div className="px-6 space-y-20 sm:space-y-24">
 
-         
+            {/* Web Development Section */}
+            <m.section 
+              id="web-development"
+              variants={memoizedAnimations.section.variants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={memoizedAnimations.section.viewport}
+              transition={memoizedAnimations.section.transition}
+            >
+              <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-36" />}>
+                <WebDev />
+              </Suspense>
+            </m.section>
 
-          <motion.section 
-            id="lead-generation"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
+            <Separator />
 
-            <LeadGen />
-            <TechStackSection />
-          </motion.section>
+            {/* Lead Generation Section */}
+            <m.section 
+              id="lead-generation"
+              variants={memoizedAnimations.section.variants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={memoizedAnimations.section.viewport}
+              transition={{...memoizedAnimations.section.transition, delay: 0.1}}
+            >
+              <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-32 mb-8" />}>
+                <LeadGen />
+              </Suspense>
+              
+              <div className="mt-12">
+                <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-40" />}>
+                  <TechStackSection />
+                </Suspense>
+              </div>
+            </m.section>
 
-          <motion.section 
-            id="automation"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            <AutomationSection />
-          </motion.section>
+            <Separator />
 
-          <motion.section 
-            id="content-strategy"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
+            {/* Automation Section */}
+            <m.section 
+              id="automation"
+              variants={memoizedAnimations.section.variants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={memoizedAnimations.section.viewport}
+              transition={{...memoizedAnimations.section.transition, delay: 0.2}}
+            >
+              <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-32" />}>
+                <AutomationSection />
+              </Suspense>
+            </m.section>
 
-          </motion.section>
+            <Separator />
 
-     
-        </div>
-      </main>
-    </div>
+            {/* Content Strategy Section - Empty but structured for future content */}
+            <m.section 
+              id="content-strategy"
+              variants={memoizedAnimations.section.variants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={memoizedAnimations.section.viewport}
+              transition={{...memoizedAnimations.section.transition, delay: 0.3}}
+            >
+              {/* Future content strategy component can be added here */}
+              <div className="text-center py-12 text-gray-500">
+                <p>Content Strategy section - Coming Soon</p>
+              </div>
+            </m.section>
+
+            <Separator />
+
+          </div>
+
+          <div className="mt-20 flex justify-center">
+            <Suspense fallback={<div className="animate-pulse bg-blue-100 rounded-lg h-12 w-32" />}>
+              <ChatbotWidget />
+            </Suspense>
+          </div>
+        </main>
+      </div>
+    </LazyMotion>
   );
 }

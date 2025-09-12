@@ -4,6 +4,8 @@ import CalendlyWidget from "@/components/features/homepage/CalendlyWidget";
 import ContactHeader from "@/components/features/ContactHeader";
 import ContactFooter from "@/components/features/ContactFooter";
 
+import ChatbotWidget from "../../components/chatbotui/chat-widget/page";
+
 export default function Page() {
   return (
     <div className="w-full min-h-screen bg-[linear-gradient(90deg,_white_0%,_white_40%,_#EFF6FF_60%,_#DBEAFE_100%)]">
@@ -30,6 +32,8 @@ export default function Page() {
         
       </div>
       <ContactFooter />
+
+      <ChatbotWidget />
 
      
     </div>

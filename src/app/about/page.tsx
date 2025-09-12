@@ -1,160 +1,218 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-// MODIFIED: Import from 'lenis' instead of the deprecated package
+import React, { useEffect, useMemo, Suspense } from 'react';
+import { LazyMotion, domAnimation, m, Transition, Variants } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import Lenis from 'lenis';
-// MODIFIED: Import Link from 'next/link'
-import Link from 'next/link';
-// MODIFIED: Removed the incorrect 'Link' import from lucide-react
-import { ArrowRight, Briefcase, Cpu, Lightbulb } from 'lucide-react';
 
-// Component Imports
+// Component Imports - Core components for immediate rendering
 import Navbar from "@/components/features/Navbar";
-import { ProcessTimeline } from '@/components/features/ProcessTimeline';
+import AboutHeader from '@/components/features/aboutuspage/AboutHeader';
+import { Separator } from "@/components/features/Seperator";
 
-// --- Main Page Component ---
-export default function Page() {
-  // Effect for Lenis smooth scrolling
+// Critical component that should load immediately
+import { ProcessTimeline } from '@/components/features/aboutuspage/ProcessTimeline';
+
+// Lazy-loaded components for better initial page load performance
+const MissionVision = dynamic(() => import('@/components/features/aboutuspage/MissionVision'), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-32" />,
+  ssr: true
+});
+
+const ValueProposition = dynamic(() => import('@/components/features/aboutuspage/ValueProposition'), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-24" />,
+  ssr: true
+});
+
+const SocailProof = dynamic(() => import('@/components/features/aboutuspage/SocailProof'), {
+  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-40" />,
+  ssr: true
+});
+
+// Updated ChatbotWidget import with better error handling
+const ChatbotWidget = dynamic(() => import("@/components/chatbotui/chat-widget/page"), {
+  loading: () => <div className="animate-pulse bg-blue-100 rounded-lg h-12 w-32 mx-auto" />,
+  ssr: false
+});
+
+// Type-safe Lenis configuration interface
+interface LenisOptions {
+  lerp?: number;
+  duration?: number;
+  easing?: (t: number) => number;
+  touchMultiplier?: number;
+}
+
+// Memoized hook for Lenis initialization with proper types
+const useLenisScroll = () => {
   useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: number) {
+    const lenisOptions: LenisOptions = {
+      lerp: 0.1,
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2
+    };
+
+    const lenis = new Lenis(lenisOptions);
+
+    const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
-    }
+    };
+
     requestAnimationFrame(raf);
+    
     return () => {
       lenis.destroy();
     };
   }, []);
+};
+
+// Type-safe animation variants - Optimized for better performance
+const fadeInVariants: Variants = {
+  initial: { 
+    opacity: 0 
+  },
+  animate: { 
+    opacity: 1 
+  }
+};
+
+const fadeInTransition: Transition = {
+  duration: 0.5,
+  ease: "easeOut"
+};
+
+const scaleVariants: Variants = {
+  initial: { 
+    opacity: 0, 
+    scale: 0.98 
+  },
+  whileInView: { 
+    opacity: 1, 
+    scale: 1 
+  }
+};
+
+const scaleTransition: Transition = {
+  duration: 0.4,
+  ease: "easeOut"
+};
+
+const slideUpVariants: Variants = {
+  initial: { 
+    opacity: 0, 
+    y: 15 
+  },
+  whileInView: { 
+    opacity: 1, 
+    y: 0 
+  }
+};
+
+const slideUpTransition: Transition = {
+  duration: 0.4,
+  ease: "easeOut",
+  delay: 0.05
+};
+
+// Founder section variants for better visual hierarchy
+const founderSectionVariants: Variants = {
+  initial: { 
+    opacity: 0, 
+    y: 30 
+  },
+  whileInView: { 
+    opacity: 1, 
+    y: 0 
+  }
+};
+
+const founderSectionTransition: Transition = {
+  duration: 0.6,
+  ease: "easeOut",
+  delay: 0.1
+};
+
+// --- Main Page Component ---
+export default function Page() {
+  useLenisScroll();
+
+  const memoizedAnimations = useMemo(() => ({
+    fadeIn: {
+      variants: fadeInVariants,
+      transition: fadeInTransition
+    },
+    scale: {
+      variants: scaleVariants,
+      viewport: { once: true, amount: 0.15 },
+      transition: scaleTransition
+    },
+    slideUp: {
+      variants: slideUpVariants,
+      viewport: { once: true, amount: 0.2 },
+      transition: slideUpTransition
+    },
+    founderSection: {
+      variants: founderSectionVariants,
+      viewport: { once: true, amount: 0.25 },
+      transition: founderSectionTransition
+    }
+  }), []);
 
   return (
-    <div className="bg-white text-gray-800">
-      <Navbar />
+    <LazyMotion features={domAnimation}>
+      <div className="bg-white text-gray-800">
+        <Navbar />
 
-      {/* --- Hero Section --- */}
-      <motion.header 
-        className="bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-7xl mx-auto pt-40 pb-24 sm:pt-48 sm:pb-32 px-6 text-center">
-          <motion.h1 
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        {/* --- Hero Section --- */}
+        <m.header 
+          className="bg-white"
+          variants={memoizedAnimations.fadeIn.variants}
+          initial="initial"
+          animate="animate"
+          transition={memoizedAnimations.fadeIn.transition}
+        >
+          <AboutHeader />
+
+          <div className="max-w-7xl mx-auto pt-40 pb-24 sm:pt-48 sm:pb-32 px-6 text-center">
+
+            
+            <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-24 mb-8" />}>
+              <ValueProposition />
+            </Suspense>
+
+            <Separator />
+
+            <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-32 mb-8" />}>
+              <MissionVision />
+            </Suspense>
+
+            <Separator />
+
+            <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-40 mb-8" />}>
+              <SocailProof />
+            </Suspense>
+
+            <Separator />
+          </div>
+        </m.header>
+
+        <main>
+          <ChatbotWidget />
+          
+          {/* --- Our Process Section --- */}
+          <m.section
+            variants={memoizedAnimations.slideUp.variants}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={memoizedAnimations.slideUp.viewport}
+            transition={{...memoizedAnimations.slideUp.transition, delay: 0.1}}
           >
-            We Are Your Digital Growth Partner.
-          </motion.h1>
-          <motion.p 
-            className="mt-6 max-w-3xl mx-auto text-lg sm:text-xl text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          >
-            {/* FIXED: Replaced ' with &apos; */}
-            We don&apos;t just build solutions; we architect ecosystems. By integrating advanced technology with strategic insight, we empower businesses to navigate complexity, automate processes, and achieve sustainable growth.
-          </motion.p>
-        </div>
-      </motion.header>
-
-      <main>
-        {/* --- Founder & Mission Section --- */}
-        <section className="py-20 sm:py-24">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div 
-              className="w-full h-96 lg:h-full bg-gray-100 rounded-2xl overflow-hidden"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
-            >
-              <Image
-                src="/Creator.png"
-                alt="Agency Founder"
-                width={800}
-                height={1000}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Meet the Founder</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                With a background in enterprise data architecture and a passion for disruptive technology, our founder established this agency to bridge the gap between complex digital potential and tangible business outcomes.
-              </p>
-              <p className="mt-4 text-lg text-gray-600">
-                {/* FIXED: Replaced ' with &apos; */}
-                &quot;Our core philosophy is simple: technology should be an accelerator, not a bottleneck. We build with purpose, ensuring every line of code, every automated workflow, and every piece of content serves a strategic goal. We are committed to being true partners in our clients&apos; success.&quot;
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* --- Core Philosophy Section --- */}
-        <section className="py-20 sm:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Our Guiding Principles</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Three core values drive every project we undertake.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Principle 1 */}
-              <div className="text-center p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                  <Lightbulb className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Strategic Innovation</h3>
-                <p className="mt-2 text-gray-600">We apply technology not for its own sake, but as a strategic tool to solve core business challenges and unlock new opportunities.</p>
-              </div>
-              {/* Principle 2 */}
-              <div className="text-center p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                  <Briefcase className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Radical Partnership</h3>
-                <p className="mt-2 text-gray-600">Your success is our metric. We integrate with your team to understand your vision deeply, ensuring our solutions are perfectly aligned.</p>
-              </div>
-              {/* Principle 3 */}
-              <div className="text-center p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mb-4">
-                  <Cpu className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Pragmatic Execution</h3>
-                <p className="mt-2 text-gray-600">Big ideas are only valuable when executed flawlessly. We focus on building robust, scalable, and maintainable systems that deliver lasting value.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* --- Our Process Section --- */}
-        <ProcessTimeline />
-
-        {/* --- CTA Section --- */}
-        <section className="bg-white py-20 sm:py-24">
-          <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Ready to Build Your Future?</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              {/* FIXED: Replaced ' with &apos; */}
-              Let&apos;s discuss how our strategic approach to technology can accelerate your growth.
-            </p>
-            <div className="mt-8">
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition transform hover:scale-105">
-                Schedule a Consultation <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+            <ProcessTimeline />
+          </m.section>
+        </main>
+      </div>
+    </LazyMotion>
   );
 }
