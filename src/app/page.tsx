@@ -11,7 +11,7 @@ import { Separator } from "@/components/features/Seperator";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import SCS01 from "@/components/features/homepage/SCS01";
 import SCS04 from "@/components/features/homepage/SCS04";
-import Contactme from "@/components/features/homepage/contactme";
+import Contactme from "@/components/features/contactme";
 import CalmImageSection from "@/components/features/CalmImageSection";
 import ChatbotWidget from "../components/chatbotui/chat-widget/page";
 
