@@ -87,7 +87,7 @@ export default function HeroSection() {
         >
           <div className="w-full h-full flex items-center justify-center">
             <VideoText src="/HeroVid.mp4" fontSize={12}>
-              Persimium
+              Programmatic
             </VideoText>
           </div>
           

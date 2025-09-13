@@ -10,8 +10,6 @@ import Navbar from "@/components/features/Navbar";
 import AboutHeader from '@/components/features/aboutuspage/AboutHeader';
 import { Separator } from "@/components/features/Seperator";
 
-// Critical component that should load immediately
-import { ProcessTimeline } from '@/components/features/aboutuspage/ProcessTimeline';
 
 // Lazy-loaded components for better initial page load performance
 const MissionVision = dynamic(() => import('@/components/features/aboutuspage/MissionVision'), {
@@ -176,7 +174,7 @@ export default function Page() {
           <AboutHeader />
 
           <div className="max-w-7xl mx-auto pt-40 pb-24 sm:pt-48 sm:pb-32 px-6 text-center">
-
+          <Separator />
             
             <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-24 mb-8" />}>
               <ValueProposition />
@@ -194,7 +192,7 @@ export default function Page() {
               <SocailProof />
             </Suspense>
 
-            <Separator />
+          
           </div>
         </m.header>
 
@@ -209,7 +207,7 @@ export default function Page() {
             viewport={memoizedAnimations.slideUp.viewport}
             transition={{...memoizedAnimations.slideUp.transition, delay: 0.1}}
           >
-            <ProcessTimeline />
+        
           </m.section>
         </main>
       </div>

@@ -18,6 +18,9 @@ import ChatbotWidget from "../components/chatbotui/chat-widget/page";
 
 
 
+
+
+
 export default function Page() {
   return (
     <div className="w-full">
@@ -69,6 +72,8 @@ export default function Page() {
         <SCS04 />
 
         <Separator />
+
+
         
 
         {/* OPTIMIZED CONTACT SECTION */}
@@ -101,7 +106,7 @@ export default function Page() {
                 <div className="max-w-xl mx-auto">
                   <Contactme />
 
-                  
+
 
                   <ChatbotWidget />
 

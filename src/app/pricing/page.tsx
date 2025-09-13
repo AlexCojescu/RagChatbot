@@ -3,6 +3,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import Navbar from "@/components/features/Navbar";
+import PricingHeader from "@/components/features/pricespages/Pricing-header";
 
 // Dynamically import pricing sections to reduce initial bundle size
 const WebDevPricingSection = dynamic(() => import("@/components/features/pricespages/WebDevPricingSection"), {
@@ -85,8 +86,13 @@ export default function Page() {
       <div className="min-h-screen bg-white">
         <Navbar />
         
-        {/* Adjusted padding with more space below navbar */}
-        <div className="w-full pt-32 sm:pt-36 pb-4">
+        {/* Pricing Header Section */}
+        <PricingHeader />
+
+
+        
+        {/* Main Content Container - Reduced top padding since header provides spacing */}
+        <div className="w-full pt-8 pb-4">
           
           {/* Filter Navigation Buttons with added margin bottom for blank space */}
           <div className="flex justify-center items-center space-x-2 sm:space-x-4 mb-8 px-4 flex-wrap">
