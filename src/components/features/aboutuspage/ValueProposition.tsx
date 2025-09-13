@@ -1,6 +1,6 @@
 // components/about/value-proposition-section.tsx
 import React from 'react';
-import { Rocket, Target, Users, Cog, Brain, Database, TrendingUp, Shield } from "lucide-react";
+import { Rocket, Target, Users, Cog, Brain, Database, TrendingUp } from "lucide-react";
 
 interface ValuePropositionSectionProps {
   className?: string;
@@ -124,7 +124,7 @@ export default function ValuePropositionSection({ className = "" }: ValueProposi
               Our Value Proposition
             </div>
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-              We Don't Just Build Solutions —{' '}
+              We Don&apos;t Just Build Solutions —{' '}
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                 We Engineer Growth
               </span>
@@ -192,8 +192,6 @@ export default function ValuePropositionSection({ className = "" }: ValueProposi
           </div>
         </div>
 
-        
-    
       </div>
 
       <style jsx>{`
