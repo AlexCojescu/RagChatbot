@@ -1,0 +1,503 @@
+
+
+/* ========================================
+   STRATEGY CONSULTING SECTION STYLES
+   ======================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+   /* Base Container */
+   .strategyConsultingContainer {
+     width: 100%;
+     max-width: 1400px;
+     margin: 2rem auto 0 auto;
+     padding: 2rem 2rem 0 2rem;
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+   }
+   
+   /* Header Section */
+   .aboveBorderSection {
+     background: #ffffff;
+     color: #1a202c;
+     padding: 3rem 2rem;
+     text-align: center;
+     margin-bottom: 2rem;
+     border-radius: 16px 16px 0 0;
+   }
+   
+   .aboveBorderContent {
+     max-width: 800px;
+     margin: 0 auto;
+   }
+   
+   .sectionHeader {
+     font-family: 'Inter', sans-serif;
+     font-size: 2.5rem;
+     font-weight: 700;
+     color: #1a202c;
+     margin: 0 0 2rem 0;
+     line-height: 1.2;
+     letter-spacing: -0.025em;
+   }
+   
+   .sectionDescription {
+     font-family: 'Inter', sans-serif;
+     font-size: 1.1rem;
+     color: #4a5568;
+     line-height: 1.6;
+     margin: 0 0 2.5rem 0;
+     font-weight: 400;
+   }
+   
+   .talkToExpertBtn {
+     font-family: 'Inter', sans-serif;
+     background: #1a202c;
+     color: white;
+     padding: 14px 28px;
+     border-radius: 8px;
+     border: none;
+     font-size: 1rem;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     letter-spacing: 0.025em;
+   }
+   
+   .talkToExpertBtn:hover {
+     background: #2d3748;
+     transform: translateY(-1px);
+     box-shadow: 0 4px 12px rgba(26, 32, 44, 0.3);
+   }
+   
+   /* Main Card */
+   .strategyConsultingCard {
+     display: flex;
+     border: 0.1px solid #f8f9fa;
+     border-radius: 16px;
+     background: white;
+     overflow: hidden;
+     min-height: 650px;
+     height: 650px;
+     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                 0 8px 25px rgba(0, 0, 0, 0.1),
+                 0 3px 10px rgba(0, 0, 0, 0.08);
+   }
+   
+   /* Left Section */
+   .leftSection {
+     flex: 1;
+     padding: 3rem 0.5rem 3rem 3rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-start;
+   }
+   
+   .imageContainer {
+     display: flex;
+     justify-content: flex-start;
+     align-items: flex-start;
+     flex-shrink: 0;
+     width: 100%;
+     margin-left: 40px;
+     margin-top: -50px;
+     margin-bottom: 0.5rem;
+   }
+   
+   .imageWithShadow {
+     position: relative;
+     display: inline-block;
+   }
+   
+   /* IMAGE FIX - Remove all unwanted borders and shadows */
+   .topImage {
+     border-radius: 8px !important;
+     object-fit: cover;
+     box-shadow: none !important;
+     position: relative;
+     z-index: 2;
+     border: none !important;
+     outline: none !important;
+     background: transparent !important;
+   }
+   
+   /* Ensure Next.js Image wrapper doesn't add unwanted styles */
+   .imageWithShadow img {
+     border: none !important;
+     outline: none !important;
+     box-shadow: none !important;
+     background: transparent !important;
+   }
+   
+   /* Override any global image styles within this component */
+   .strategyConsultingContainer img,
+   .strategyConsultingContainer .topImage {
+     border: none !important;
+     outline: none !important;
+     box-shadow: none !important;
+     background: transparent !important;
+   }
+   
+   .saucerShadow {
+     position: absolute;
+     bottom: -12px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 180px;
+     height: 20px;
+     background: radial-gradient(ellipse, rgba(0, 0, 0, 0.7) 0%, transparent 70%);
+     border-radius: 50%;
+     filter: blur(8px);
+     z-index: 1;
+   }
+   
+   .leftContent {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     align-self: flex-start;
+     width: 100%;
+   }
+   
+   .mainTitle {
+     font-family: 'Inter', sans-serif;
+     font-size: 2.2rem;
+     font-weight: 700;
+     color: #1a202c;
+     margin: 0;
+     line-height: 1.2;
+     letter-spacing: -0.025em;
+   }
+   
+   .subtitle {
+     font-family: 'Inter', sans-serif;
+     font-size: 1.1rem;
+     color: #4a5568;
+     margin: 0;
+     font-weight: 500;
+     letter-spacing: 0.025em;
+   }
+   
+   .description {
+     font-family: 'Inter', sans-serif;
+     font-size: 0.95rem;
+     color: #718096;
+     line-height: 1.6;
+     margin: 0 0 1.5rem 0;
+     max-width: none;
+     font-weight: 400;
+   }
+   
+   .learnMoreBtn {
+     font-family: 'Inter', sans-serif;
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     background: transparent;
+     color: #1a202c;
+     border: 1px solid #e2e8f0;
+     padding: 10px 20px;
+     border-radius: 6px;
+     font-size: 0.9rem;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     letter-spacing: 0.025em;
+     align-self: flex-start;
+   }
+   
+   .learnMoreBtn:hover {
+     background: #f7fafc;
+     border-color: #cbd5e0;
+     transform: translateX(2px);
+   }
+   
+   .arrowIcon {
+     transition: transform 0.3s ease;
+     flex-shrink: 0;
+   }
+   
+   .learnMoreBtn:hover .arrowIcon {
+     transform: translateX(3px);
+   }
+   
+   /* Divider */
+   .dividerLine {
+     width: 1px;
+     background-color: #000000;
+     flex-shrink: 0;
+     align-self: center;
+     height: 85%;
+     margin: 15px 0;
+   }
+   
+   /* Right Section */
+   .rightSection {
+     flex: 1.2;
+     padding: 3rem 3rem 3rem 4rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+   
+   .rightContent {
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+   }
+   
+   .contentBlock {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+   }
+   
+   .blockTitle {
+     font-family: 'Inter', sans-serif;
+     font-size: 1.5rem;
+     font-weight: 600;
+     color: #1a202c;
+     margin: 0;
+     letter-spacing: -0.025em;
+   }
+   
+   .bulletPoints {
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+   }
+   
+   .bulletItem {
+     font-family: 'Inter', sans-serif;
+     display: flex;
+     align-items: flex-start;
+     gap: 0.5rem;
+     font-size: 1.1rem;
+     line-height: 1.5;
+     font-weight: 400;
+     color: #1a202c;
+   }
+   
+   .bullet {
+     color: #3182ce;
+     font-weight: bold;
+     margin-top: 0.1rem;
+     flex-shrink: 0;
+     font-size: 1.2rem;
+   }
+   
+   /* Mobile Optimizations - Tablet */
+   @media (max-width: 768px) {
+     .strategyConsultingContainer {
+       margin: 4vw auto 0 auto;
+       padding: 4vw 4vw 0 4vw;
+     }
+   
+     .aboveBorderSection {
+       padding: 8vw 6vw;
+       margin-bottom: 6vw;
+     }
+   
+     .sectionHeader {
+       font-size: clamp(1.75rem, 6vw, 2.25rem);
+       margin-bottom: 6vw;
+       line-height: 1.3;
+     }
+   
+     .sectionDescription {
+       font-size: max(16px, 4vw);
+       line-height: 1.7;
+       margin-bottom: 8vw;
+     }
+   
+     .talkToExpertBtn {
+       min-height: 52px;
+       min-width: 200px;
+       padding: 16px 32px;
+       font-size: max(16px, 4vw);
+       border-radius: 12px;
+       margin: 0 auto;
+       display: block;
+     }
+   
+     .strategyConsultingCard {
+       flex-direction: column;
+       height: auto;
+       min-height: auto;
+       border-radius: 20px;
+       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12),
+                   0 6px 20px rgba(0, 0, 0, 0.08),
+                   0 2px 8px rgba(0, 0, 0, 0.06);
+     }
+   
+     .leftSection {
+       padding: 8vw 6vw 8vw 6vw;
+       gap: 6vw;
+       align-items: center;
+       justify-content: flex-start;
+     }
+   
+     .imageContainer {
+       justify-content: center;
+       margin: 0 auto 4vw auto;
+       width: 80vw;
+       max-width: 320px;
+     }
+   
+     .topImage {
+       width: 100% !important;
+       height: auto !important;
+       max-width: 100% !important;
+       border-radius: 12px !important;
+       border: none !important;
+       outline: none !important;
+       box-shadow: none !important;
+       background: transparent !important;
+     }
+   
+     .saucerShadow {
+       width: 70%;
+       height: 4vw;
+       max-height: 16px;
+       bottom: -2vw;
+     }
+   
+     .dividerLine {
+       width: 80%;
+       height: 2px;
+       margin: 6vw auto;
+       background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+     }
+   
+     .leftContent {
+       align-items: center;
+       text-align: center;
+       gap: 4vw;
+       width: 100%;
+     }
+   
+     .mainTitle {
+       font-size: clamp(1.5rem, 6vw, 2rem);
+       line-height: 1.3;
+       margin-bottom: 2vw;
+     }
+   
+     .subtitle {
+       font-size: max(16px, 4.5vw);
+       line-height: 1.4;
+       margin-bottom: 2vw;
+     }
+   
+     .description {
+       font-size: max(16px, 4vw);
+       line-height: 1.7;
+       margin-bottom: 6vw;
+       text-align: left;
+     }
+   
+     .learnMoreBtn {
+       min-height: 52px;
+       padding: 16px 28px;
+       font-size: max(16px, 4vw);
+       border-radius: 12px;
+       margin: 0 auto;
+       gap: 2vw;
+       justify-content: center;
+     }
+   
+     .rightSection {
+       padding: 6vw 6vw 8vw 6vw;
+     }
+   
+     .rightContent {
+       gap: 8vw;
+     }
+   
+     .contentBlock {
+       gap: 4vw;
+     }
+   
+     .blockTitle {
+       font-size: clamp(1.1rem, 5vw, 1.4rem);
+       line-height: 1.3;
+       text-align: left;
+     }
+   
+     .bulletPoints {
+       gap: 4vw;
+     }
+   
+     .bulletItem {
+       font-size: max(16px, 4vw);
+       line-height: 1.6;
+       gap: 3vw;
+       align-items: flex-start;
+     }
+   
+     .bullet {
+       font-size: max(18px, 4.5vw);
+       margin-top: 0.2rem;
+       flex-shrink: 0;
+     }
+   }
+   
+   /* Mobile Optimizations - Small Mobile */
+   @media (max-width: 480px) {
+     .strategyConsultingContainer {
+       padding: 5vw 3vw 0 3vw;
+     }
+   
+     .aboveBorderSection {
+       padding: 10vw 5vw;
+       border-radius: 16px;
+     }
+   
+     .sectionHeader {
+       font-size: clamp(1.5rem, 7vw, 2rem);
+     }
+   
+     .leftSection {
+       padding: 10vw 5vw;
+     }
+   
+     .rightSection {
+       padding: 8vw 5vw 10vw 5vw;
+     }
+   
+     .talkToExpertBtn,
+     .learnMoreBtn {
+       min-height: 56px;
+       font-size: max(17px, 4.5vw);
+     }
+   }
+   
+   /* Performance Optimizations */
+   .strategyConsultingCard {
+     will-change: transform;
+     backface-visibility: hidden;
+   }
+   
+   .talkToExpertBtn,
+   .learnMoreBtn {
+     will-change: transform;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+   }
+   
+   /* Smooth Animations - Lightweight and snappy */
+   @media (prefers-reduced-motion: no-preference) {
+     .talkToExpertBtn,
+     .learnMoreBtn {
+       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+     }
+   
+     .arrowIcon {
+       transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+     }
+   }
+   
+   /* Box-sizing optimization */
+   .strategyConsultingContainer *,
+   .strategyConsultingContainer *::before,
+   .strategyConsultingContainer *::after {
+     box-sizing: border-box;
+   }
+   

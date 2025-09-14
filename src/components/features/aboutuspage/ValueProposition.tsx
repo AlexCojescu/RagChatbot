@@ -69,21 +69,21 @@ export default function ValuePropositionSection({ className = "" }: ValueProposi
       icon: <Users className="h-8 w-8" />,
       title: "Radical Partnership & Strategic Focus",
       subtitle: "Extension of Your Team",
-      description: "Unlike agencies that deliver a product and walk away, we embed ourselves in your business. We act as an extension of your team, applying technology not for its own sake but as a strategic tool to achieve your specific business goals. We're driven by your success, ensuring every solution we build is perfectly aligned with your vision and bottom line.",
+      description: "Unlike agencies that deliver a product and walk away, we embed ourselves in your business. We act as an extension of your team, applying technology not for its own sake but as a strategic tool to achieve your specific business goals. We&apos;re driven by your success, ensuring every solution we build is perfectly aligned with your vision and bottom line.",
       accentColor: 'blue' as const
     },
     {
       icon: <Target className="h-8 w-8" />,
       title: "Pragmatic Execution & Tangible Results",
       subtitle: "Performance Over Potential",
-      description: "We specialize in taking big ideas and executing them flawlessly. We focus on building robust, scalable, and maintainable systems that deliver real, measurable results. Whether it's automating your operations, generating high-quality leads, or deploying an intelligent digital presence, our proven framework ensures your investment delivers a clear and significant return. We turn potential into performance.",
+      description: "We specialize in taking big ideas and executing them flawlessly. We focus on building robust, scalable, and maintainable systems that deliver real, measurable results. Whether it&apos;s automating your operations, generating high-quality leads, or deploying an intelligent digital presence, our proven framework ensures your investment delivers a clear and significant return. We turn potential into performance.",
       accentColor: 'purple' as const
     },
     {
       icon: <Brain className="h-8 w-8" />,
       title: "Integrated AI & Data-Driven Architecture",
       subtitle: "Smart & Reliable Systems",
-      description: "Our core expertise lies in bridging the gap between cutting-edge AI and foundational data architecture. We don't offer isolated services; we create a cohesive, intelligent digital ecosystem. By deploying powerful RAG infrastructure, we ensure your AI is accurate and trustworthy, while our lead generation and automation solutions are powered by a deep understanding of your data. This integration ensures our systems are not just smart but also reliable, turning your data into a strategic asset.",
+      description: "Our core expertise lies in bridging the gap between cutting-edge AI and foundational data architecture. We don&apos;t offer isolated services; we create a cohesive, intelligent digital ecosystem. By deploying powerful RAG infrastructure, we ensure your AI is accurate and trustworthy, while our lead generation and automation solutions are powered by a deep understanding of your data. This integration ensures our systems are not just smart but also reliable, turning your data into a strategic asset.",
       accentColor: 'emerald' as const
     }
   ];

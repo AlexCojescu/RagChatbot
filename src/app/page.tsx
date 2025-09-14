@@ -1,32 +1,19 @@
 import CalendlyWidget from "@/components/features/homepage/CalendlyWidget";
-
-import HeroSection from "@/components/features/HeroSection";
+import HeroSection from "@/components/features/homepage/HeroSection";
 import Navbar from "@/components/features/Navbar";
-
 import ProcessSection from "@/components/features/homepage/ProcessSection";
 import QuoteSection from "@/components/features/homepage/QuoteSection";
-import SCS02 from "@/components/features/homepage/SCS02";
-import SCS03 from "@/components/features/homepage/SCS03";
+import ServiceFilter from "@/components/features/homepage/Service-filter"; // New import
 import { Separator } from "@/components/features/Seperator";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import SCS01 from "@/components/features/homepage/SCS01";
-import SCS04 from "@/components/features/homepage/SCS04";
 import Contactme from "@/components/features/contactme";
 import CalmImageSection from "@/components/features/CalmImageSection";
 import ChatbotWidget from "../components/chatbotui/chat-widget/page";
 
 
-
-
-
-
-
 export default function Page() {
   return (
     <div className="w-full">
-
-
-
       <Navbar />
       <HeroSection />
       
@@ -46,35 +33,26 @@ export default function Page() {
             className="flex items-center justify-center p-4 lg:p-8"
           > 
             <div className="w-full max-w-xl lg:-ml-20">
-            <CalmImageSection
-  src="/HeaderImage.png"
-  alt="Your image description"
-  width={1400}
-  height={1050}
-  priority={true}
-  className="my-8"
-/>
-
+              <CalmImageSection
+                src="/HeaderImage.png"
+                alt="Your image description"
+                width={1400}
+                height={1050}
+                priority={true}
+                className="my-8"
+              />
             </div>
           </div>
         </div>
 
-        {/* SCS Sections */}
+        {/* Quote Section */}
         <QuoteSection />
         <div className="py-6" />
 
-        <SCS01 />
-        
-        <SCS02 />
-       
-        <SCS03 />
-        
-        <SCS04 />
+        {/* NEW: Service Filter Component replaces individual SCS components */}
+        <ServiceFilter />
 
         <Separator />
-
-
-        
 
         {/* OPTIMIZED CONTACT SECTION */}
         <div className="bg-white py-16 px-4">
@@ -105,11 +83,7 @@ export default function Page() {
               <div className="w-full">
                 <div className="max-w-xl mx-auto">
                   <Contactme />
-
-
-
                   <ChatbotWidget />
-
                 </div>
               </div>
             </div>
