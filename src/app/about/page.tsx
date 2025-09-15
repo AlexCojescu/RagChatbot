@@ -10,7 +10,6 @@ import Navbar from "@/components/features/Navbar";
 import AboutHeader from '@/components/features/aboutuspage/AboutHeader';
 import { Separator } from "@/components/features/Seperator";
 
-
 // Lazy-loaded components for better initial page load performance
 const MissionVision = dynamic(() => import('@/components/features/aboutuspage/MissionVision'), {
   loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-32" />,
@@ -160,12 +159,15 @@ export default function Page() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="bg-white text-gray-800">
+      <div className="relative min-h-screen text-gray-800">
+        {/* Exact background gradient from your main page */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,_white_0%,_white_40%,_#EFF6FF_60%,_#DBEAFE_100%)]" />
+        
         <Navbar />
 
         {/* --- Hero Section --- */}
         <m.header 
-          className="bg-white"
+          className="relative"
           variants={memoizedAnimations.fadeIn.variants}
           initial="initial"
           animate="animate"
@@ -174,25 +176,47 @@ export default function Page() {
           <AboutHeader />
 
           <div className="max-w-7xl mx-auto pt-40 pb-24 sm:pt-48 sm:pb-32 px-6 text-center">
-          <Separator />
+            <Separator />
             
             <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-24 mb-8" />}>
-              <ValueProposition />
+              <m.div
+                variants={memoizedAnimations.slideUp.variants}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={memoizedAnimations.slideUp.viewport}
+                transition={memoizedAnimations.slideUp.transition}
+              >
+                <ValueProposition />
+              </m.div>
             </Suspense>
 
             <Separator />
 
             <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-32 mb-8" />}>
-              <MissionVision />
+              <m.div
+                variants={memoizedAnimations.slideUp.variants}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={memoizedAnimations.slideUp.viewport}
+                transition={{...memoizedAnimations.slideUp.transition, delay: 0.2}}
+              >
+                <MissionVision />
+              </m.div>
             </Suspense>
 
             <Separator />
 
             <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-40 mb-8" />}>
-              <SocailProof />
+              <m.div
+                variants={memoizedAnimations.slideUp.variants}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={memoizedAnimations.slideUp.viewport}
+                transition={{...memoizedAnimations.slideUp.transition, delay: 0.4}}
+              >
+                <SocailProof />
+              </m.div>
             </Suspense>
-
-          
           </div>
         </m.header>
 

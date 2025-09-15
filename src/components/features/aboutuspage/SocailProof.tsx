@@ -100,7 +100,7 @@ export default function SocialProofPage() {
             { value: '380%', label: 'Average ROI Increase', sublabel: 'Within first year' },
             { value: '98%', label: 'Client Retention Rate', sublabel: 'Long-term partnerships' }
           ].map((metric, index) => (
-            <div key={index} className="text-center bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
+            <div key={index} className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-6 border border-white/30 shadow-sm hover:bg-white/30 transition-all duration-300">
               <div className="text-4xl font-bold text-blue-600 mb-2">{metric.value}</div>
               <div className="font-semibold text-gray-900 mb-1">{metric.label}</div>
               <div className="text-sm text-gray-600">{metric.sublabel}</div>
@@ -113,7 +113,7 @@ export default function SocialProofPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Client Success Stories</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-white/30 hover:bg-white/30 hover:shadow-xl transition-all duration-300">
                 {/* Company Header */}
                 <div className="flex items-center mb-6">
                   <div className="text-4xl mr-4">{testimonial.logo}</div>
@@ -136,13 +136,13 @@ export default function SocialProofPage() {
                 </blockquote>
 
                 {/* Author */}
-                <div className="border-t pt-4">
+                <div className="border-t border-white/30 pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>
                   <div className="text-sm text-gray-600">{testimonial.title}</div>
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100">
+                <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-white/30">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-green-600">{testimonial.metrics.roi}</div>
                     <div className="text-xs text-gray-600">ROI</div>
@@ -166,13 +166,13 @@ export default function SocialProofPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Detailed Case Studies</h2>
           <div className="space-y-8">
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+              <div key={index} className="bg-white/15 backdrop-blur-sm rounded-2xl p-8 border border-white/30 shadow-sm hover:bg-white/25 transition-all duration-300">
                 <div className="grid md:grid-cols-3 gap-8">
                   {/* Study Overview */}
                   <div className="md:col-span-2">
                     <div className="flex items-center mb-4">
                       <h3 className="text-2xl font-bold text-gray-900">{study.title}</h3>
-                      <span className="ml-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                      <span className="ml-4 bg-white/30 backdrop-blur-sm text-blue-800 text-sm font-medium px-3 py-1 rounded-full border border-white/40">
                         {study.industry}
                       </span>
                     </div>
@@ -203,14 +203,14 @@ export default function SocialProofPage() {
                   </div>
                   
                   {/* Key Metrics */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <div className="bg-white/25 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-white/40">
                     <h4 className="font-bold text-gray-900 mb-4">Project Impact</h4>
                     <div className="space-y-4">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-green-600">{study.roi}</div>
                         <div className="text-sm text-gray-600">Return on Investment</div>
                       </div>
-                      <div className="text-center pt-4 border-t border-gray-100">
+                      <div className="text-center pt-4 border-t border-white/30">
                         <div className="text-2xl font-bold text-blue-600">{study.timeline}</div>
                         <div className="text-sm text-gray-600">Implementation Timeline</div>
                       </div>
@@ -232,7 +232,7 @@ export default function SocialProofPage() {
               { award: 'Client Success Excellence', org: 'Consulting Industry Awards' },
               { award: 'Innovation in Business Solutions', org: 'Global Business Forum' }
             ].map((recognition, index) => (
-              <div key={index} className="text-center bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
+              <div key={index} className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-6 border border-white/30 shadow-sm hover:bg-white/30 transition-all duration-300">
                 <div className="text-4xl mb-4">🏆</div>
                 <h3 className="font-bold text-gray-900 mb-2 text-sm">{recognition.award}</h3>
                 <p className="text-xs text-gray-600">{recognition.org}</p>

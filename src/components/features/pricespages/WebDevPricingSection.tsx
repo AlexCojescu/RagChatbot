@@ -3,130 +3,167 @@ import React from 'react';
 const WebDevPricingSection = () => {
   // A reusable checkmark icon for the features list
   const CheckIcon = () => (
-    <svg className="w-5 h-5 mr-2.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   );
 
   return (
-    <div className="my-0">
-      <section className="bg-white py-4 sm:py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-20">
+      {/* Subtle background pattern - made transparent */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+      
+      <div className="relative container mx-auto px-6 max-w-6xl">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center rounded-full border border-white/40 bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm mb-6">
+            <div className="mr-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+            Web Development
+          </div>
+          
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6">
+            Premium{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Web Development
+            </span>
+          </h2>
+          
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We combine a one-time project with an ongoing partnership to build your foundation and scale your growth.
+          </p>
+        </div>
 
-          {/* Main Heading and Subheading */}
-          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 leading-tight">
-              Simple Pricing for a Complete Growth System
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600">
-              We combine a one-time project with an ongoing partnership to build your foundation and scale your growth.
+        {/* Project Investment Section */}
+        <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-12 border border-white/30 mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">One-Time Project Investment</h3>
+            <p className="text-gray-600 text-lg max-w-4xl mx-auto">
+              This is the initial, intensive build where we construct your entire digital architecture and deploy your core brand assets. 
+              50% is due at the start, with the remainder upon successful completion.
             </p>
           </div>
 
-          {/* --- STEP 1: THE FOUNDATION PROJECT --- */}
-          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
-            <div className="text-center mb-8">
-              <span className="text-blue-600 font-semibold tracking-wider uppercase">Step 1</span>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mt-2">The Foundation Project</h3>
-              <p className="text-base sm:text-lg text-gray-500 mt-1">One-Time Project Investment</p>
+          <div className="text-center bg-white/20 backdrop-blur-sm rounded-xl p-8 border border-white/40">
+            <div className="mb-6">
+              <div className="text-lg font-semibold text-gray-900 mb-2">Starting at a One-Time Investment of</div>
+              <div className="text-6xl font-bold text-blue-600 mb-2">$7,500+</div>
+              <div className="text-gray-500">Final quote provided after our discovery call.</div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 sm:p-8">
-              <p className="text-base sm:text-lg text-gray-700 mb-6">
-                This is the initial, intensive build where we construct your entire digital architecture and deploy your core brand assets. 50% is due at the start, with the remainder upon successful completion.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-3">Core Asset Construction:</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex"><CheckIcon /> High-performance Next.js website</li>
-                    <li className="flex"><CheckIcon /> Complete brand identity package (logo, etc.)</li>
-                    <li className="flex"><CheckIcon /> Professional, AI-assisted web copy</li>
-                  </ul>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              {[
+                'Custom website development',
+                'Mobile-responsive design',
+                'SEO optimization',
+                'Performance optimization',
+                'Content management system',
+                'Analytics integration'
+              ].map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-700">{feature}</span>
                 </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-3">Strategy & Automation Setup:</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex"><CheckIcon /> Foundational SEO & content blueprint</li>
-                    <li className="flex"><CheckIcon /> Integration with your core tools (CRM, etc.)</li>
-                    <li className="flex"><CheckIcon /> Automation of one key manual process</li>
-                    <li className="flex"><CheckIcon /> Creation of one high-value brand asset</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="text-center mt-8 border-t border-gray-200 pt-6">
-                <p className="text-sm text-gray-500">Starting at a One-Time Investment of</p>
-                <p className="text-4xl font-bold text-gray-900 mt-1">$7,500+</p>
-                <p className="text-xs text-gray-500 mt-1">Final quote provided after our discovery call.</p>
-              </div>
+              ))}
             </div>
           </div>
-          
-          {/* --- STEP 2: GROWTH & SUPPORT PARTNERSHIP --- */}
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-                <span className="text-blue-600 font-semibold tracking-wider uppercase">Step 2</span>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Growth & Support Partnership</h3>
-                <p className="text-base sm:text-lg text-gray-500 mt-1">Monthly Retainer</p>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
-              {/* Essential Plan */}
-              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col">
-                <h4 className="text-xl font-bold text-gray-900">Essential</h4>
-                <p className="text-gray-500 mt-1 mb-4">Peace of Mind & Support</p>
-                <p className="text-4xl font-bold text-gray-900 mb-4">$500<span className="text-lg font-medium text-gray-500">/mo</span></p>
-                <ul className="space-y-3 text-gray-600 flex-grow">
-                  <li className="font-bold text-gray-800 text-sm uppercase tracking-wider">Core Features</li>
-                  <li className="flex"><CheckIcon /> 24/7 Priority Support</li>
-                  <li className="flex"><CheckIcon /> Secure Hosting & Maintenance</li>
-                  <li className="flex"><CheckIcon /> Performance Monitoring</li>
-                </ul>
-              </div>
-
-              {/* Growth Plan (Highlighted) */}
-              <div className="bg-white rounded-xl shadow-2xl border-2 border-blue-600 p-6 flex flex-col relative">
-                <div className="absolute top-0 -translate-y-1/2 w-full flex justify-center">
-                    <span className="bg-blue-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">Most Popular</span>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900">Growth</h4>
-                <p className="text-gray-500 mt-1 mb-4">Proactive Content & Leads</p>
-                <p className="text-4xl font-bold text-gray-900 mb-4">$1,800<span className="text-lg font-medium text-gray-500">/mo</span></p>
-                <ul className="space-y-3 text-gray-600 flex-grow">
-                    <li className="font-bold text-gray-800 text-sm uppercase tracking-wider">All Core Features, Plus:</li>
-                    <li className="flex"><CheckIcon /> Monthly Strategic Content (2 Articles)</li>
-                    <li className="flex"><CheckIcon /> Active Lead Gen Campaigns</li>
-                </ul>
-              </div>
-
-              {/* Scale Plan */}
-              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 flex flex-col">
-                <h4 className="text-xl font-bold text-gray-900">Scale</h4>
-                <p className="text-gray-500 mt-1 mb-4">Aggressive Market Leadership</p>
-                <p className="text-4xl font-bold text-gray-900 mb-4">$4,500<span className="text-lg font-medium text-gray-500">/mo</span></p>
-                <ul className="space-y-3 text-gray-600 flex-grow">
-                    <li className="font-bold text-gray-800 text-sm uppercase tracking-wider">All Growth Features, Plus:</li>
-                    <li className="flex"><CheckIcon /> Expanded Content (6 Articles + Video)</li>
-                    <li className="flex"><CheckIcon /> New Process Automations</li>
-                    <li className="flex"><CheckIcon /> Monthly Strategy Calls</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* --- FINAL CALL TO ACTION --- */}
-          <div className="text-center mt-12 sm:mt-16">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">Ready to Build Your Foundation?</h3>
-            <p className="text-lg text-gray-600 mt-2 mb-6">Every great partnership starts with a single conversation.</p>
-            <a 
-                href="#contact-me" 
-                className="inline-block bg-blue-600 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full text-center text-base sm:text-lg hover:bg-blue-700 transition-colors shadow-lg"
-              >
-                Schedule a Free Discovery Call
-            </a>
-          </div>
-
         </div>
-      </section>
+
+        {/* Monthly Retainer Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Monthly Retainer</h3>
+            <p className="text-gray-600 text-lg">Choose the level of ongoing support that fits your growth goals</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Basic Support */}
+            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-8 border border-white/30 shadow-sm hover:bg-white/20 transition-all duration-300">
+              <div className="text-center mb-8">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">Peace of Mind & Support</h4>
+                <div className="text-4xl font-bold text-blue-600 mb-2">$500<span className="text-lg">/mo</span></div>
+              </div>
+              
+              <div className="space-y-4">
+                {[
+                  'Website maintenance & updates',
+                  'Security monitoring',
+                  'Backup & recovery',
+                  'Technical support',
+                  'Monthly performance reports'
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Content & Leads */}
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 border border-white/40 shadow-lg hover:bg-white/25 transition-all duration-300 transform scale-105">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center rounded-full bg-blue-100/50 px-3 py-1 text-xs font-semibold text-blue-800 mb-4">
+                  Most Popular
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">Proactive Content & Leads</h4>
+                <div className="text-4xl font-bold text-blue-600 mb-2">$1,800<span className="text-lg">/mo</span></div>
+              </div>
+              
+              <div className="space-y-4">
+                {[
+                  'Everything in basic support',
+                  'Content creation & publishing',
+                  'SEO optimization',
+                  'Lead generation setup',
+                  'Email marketing automation',
+                  'Monthly strategy calls'
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Aggressive Growth */}
+            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-8 border border-white/30 shadow-sm hover:bg-white/20 transition-all duration-300">
+              <div className="text-center mb-8">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">Aggressive Market Leadership</h4>
+                <div className="text-4xl font-bold text-blue-600 mb-2">$4,500<span className="text-lg">/mo</span></div>
+              </div>
+              
+              <div className="space-y-4">
+                {[
+                  'Everything in content & leads',
+                  'Advanced automation systems',
+                  'Multi-channel campaigns',
+                  'A/B testing & optimization',
+                  'Custom integrations',
+                  'Weekly performance reviews',
+                  'Priority support & updates'
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 border border-white/30 text-center">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
+          <p className="text-gray-600 text-lg mb-8">
+            Every great partnership starts with a single conversation.
+          </p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300">
+            Schedule a Free Discovery Call
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

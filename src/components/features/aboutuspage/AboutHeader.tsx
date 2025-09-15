@@ -44,18 +44,18 @@ const AboutHeader = () => {
   };
   
   return (
-    <header className="relative bg-white overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-8 w-20 h-20 border border-blue-200/30 rounded-full opacity-50"></div>
-      <div className="absolute top-1/2 right-12 w-16 h-16 bg-blue-100/20 rounded-lg rotate-45 opacity-40"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-12 h-12 border-2 border-blue-300/20 rounded-lg rotate-12 opacity-30"></div>
+    <header className="relative overflow-hidden">
+      {/* Decorative elements - made more transparent */}
+      <div className="absolute top-1/4 left-8 w-20 h-20 border border-white/30 rounded-full opacity-50"></div>
+      <div className="absolute top-1/2 right-12 w-16 h-16 bg-white/20 rounded-lg rotate-45 opacity-40"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-12 h-12 border-2 border-white/20 rounded-lg rotate-12 opacity-30"></div>
       
       {/* Main header content with increased top spacing */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 xl:pt-40 pb-16 lg:pb-24">
         <div className="text-center max-w-5xl mx-auto space-y-16">
           {/* Main heading with staggered animation */}
           <div className="space-y-8">
-            <div className="inline-flex items-center space-x-3 bg-blue-50/50 rounded-full px-6 py-3 border border-blue-100/50">
+            <div className="inline-flex items-center space-x-3 bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 border border-white/50">
               <UsersIcon className="w-6 h-6 text-blue-600" />
               <span className="text-blue-700 font-medium">About Our Company</span>
             </div>
@@ -73,13 +73,13 @@ const AboutHeader = () => {
             </p>
           </div>
 
-          {/* Quick navigation cards */}
+          {/* Quick navigation cards - made transparent */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 opacity-0 animate-[fadeInUp_0.8s_1s_forwards]">
             {sections.map((section, index) => (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className="group bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-blue-100/50 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-left"
+                className="group bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:bg-white/30 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-left"
                 style={{
                   animationDelay: `${1.2 + (index * 0.1)}s`
                 }}
@@ -116,10 +116,6 @@ const AboutHeader = () => {
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-      
       {/* CSS for animations */}
       <style jsx>{`
         @keyframes fadeInUp {

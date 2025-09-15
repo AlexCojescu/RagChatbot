@@ -66,9 +66,7 @@ const Footer = () => {
                   <Link href="/help" className="text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200 hover:translate-x-1">
                     Help Center
                   </Link>
-                  <Link href="/documentation" className="text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200 hover:translate-x-1">
-                    Documentation
-                  </Link>
+                  
                   <Link href="/faq" className="text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200 hover:translate-x-1">
                     FAQ
                   </Link>

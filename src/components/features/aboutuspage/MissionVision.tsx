@@ -20,17 +20,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   variant = 'mission' 
 }) => {
   const colorClasses = variant === 'mission' 
-    ? 'bg-blue-50/50 text-blue-600 group-hover:bg-blue-100/70 border-blue-100/50 hover:border-blue-200 hover:shadow-blue-500/5' 
-    : 'bg-purple-50/50 text-purple-600 group-hover:bg-purple-100/70 border-purple-100/50 hover:border-purple-200 hover:shadow-purple-500/5';
+    ? 'bg-white/10 text-blue-600 group-hover:bg-white/20 border-white/20 hover:border-white/30 hover:shadow-blue-500/10' 
+    : 'bg-white/10 text-purple-600 group-hover:bg-white/20 border-white/20 hover:border-white/30 hover:shadow-purple-500/10';
   
   return (
-    <div className={`group relative overflow-hidden rounded-xl border bg-white/80 backdrop-blur-sm p-4 shadow-sm transition-all duration-500 ease-out hover:shadow-lg hover:-translate-y-0.5 ${colorClasses}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className={`group relative overflow-hidden rounded-xl border backdrop-blur-sm p-4 shadow-sm transition-all duration-500 ease-out hover:shadow-lg hover:-translate-y-0.5 ${colorClasses}`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 flex items-start gap-3">
         <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
           variant === 'mission' 
-            ? 'bg-blue-50 text-blue-600 group-hover:bg-blue-100 group-hover:scale-105' 
-            : 'bg-purple-50 text-purple-600 group-hover:bg-purple-100 group-hover:scale-105'
+            ? 'bg-white/20 text-blue-600 group-hover:bg-white/30 group-hover:scale-105' 
+            : 'bg-white/20 text-purple-600 group-hover:bg-white/30 group-hover:scale-105'
         }`}>
           {icon}
         </div>
@@ -66,7 +66,7 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
     {
       icon: <Target className="h-5 w-5" />,
       title: "Indispensable Force",
-      description: "Become the driving power behind our clients&apos; unprecedented success"
+      description: "Become the driving power behind our clients' unprecedented success"
     },
     {
       icon: <Code2 className="h-5 w-5" />,
@@ -76,17 +76,17 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
     {
       icon: <Eye className="h-5 w-5" />,
       title: "Future Vision", 
-      description: "Enable companies of all sizes to leverage technology&apos;s full potential"
+      description: "Enable companies of all sizes to leverage technology's full potential"
     }
   ];
 
   return (
     <section 
-      className={`relative bg-gradient-to-b from-white via-gray-50/30 to-white py-20 lg:py-32 ${className}`} 
+      className={`relative py-20 lg:py-32 ${className}`} 
       aria-labelledby="mission-vision-heading"
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f8fafc_1px,transparent_1px),linear-gradient(to_bottom,#f8fafc_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
+      {/* Subtle background pattern - made more transparent */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
       
       <div className="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-6xl">
         {/* Mission Section */}
@@ -95,7 +95,7 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
           <div className="text-center mb-12 lg:mb-16">
             <div className="space-y-6 max-w-4xl mx-auto">
               <div className="flex justify-center">
-                <div className="inline-flex items-center rounded-full border border-blue-200/60 bg-blue-50/80 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm">
+                <div className="inline-flex items-center rounded-full border border-white/40 bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm">
                   <div className="mr-2 h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
                   Our Mission
                 </div>
@@ -141,10 +141,10 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
         {/* Divider */}
         <div className="relative mb-24 lg:mb-32">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200" />
+            <div className="w-full border-t border-white/30" />
           </div>
           <div className="relative flex justify-center">
-            <div className="bg-white px-8">
+            <div className="bg-white/20 backdrop-blur-sm px-8 rounded-full">
               <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
           <div className="text-center mb-12 lg:mb-16">
             <div className="space-y-6 max-w-4xl mx-auto">
               <div className="flex justify-center">
-                <div className="inline-flex items-center rounded-full border border-purple-200/60 bg-purple-50/80 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-purple-700 shadow-sm">
+                <div className="inline-flex items-center rounded-full border border-white/40 bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-purple-700 shadow-sm">
                   <div className="mr-2 h-2 w-2 rounded-full bg-purple-500 animate-pulse" />
                   Our Vision
                 </div>
@@ -169,8 +169,8 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
               </h2>
               <div className="space-y-6 text-lg max-w-3xl mx-auto">
                 <p className="text-gray-600 leading-relaxed font-medium">
-                  Our vision is to be the <strong className="text-gray-900 font-semibold">indispensable force</strong> behind our clients&apos; success, 
-                  known for architecting and deploying digital ecosystems that don&apos;t just work but accelerate business outcomes.
+                  Our vision is to be the <strong className="text-gray-900 font-semibold">indispensable force</strong> behind our clients; success, 
+                  known for architecting and deploying digital ecosystems that don;t just work but accelerate business outcomes.
                 </p>
                 <p className="text-gray-600 leading-relaxed font-medium">
                   We aspire to create a future where <strong className="text-gray-900 font-semibold">every company</strong>, regardless of size, 

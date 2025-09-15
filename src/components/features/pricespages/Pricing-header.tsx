@@ -9,21 +9,21 @@ interface PricingHeaderProps {
 export default function PricingHeader({ className = "" }: PricingHeaderProps) {
   return (
     <section 
-      className={`relative bg-gradient-to-b from-white via-gray-50/20 to-white pt-32 lg:pt-40 xl:pt-48 pb-20 lg:pb-28 overflow-hidden ${className}`}
+      className={`relative pt-32 lg:pt-40 xl:pt-48 pb-20 lg:pb-28 overflow-hidden ${className}`}
       aria-labelledby="pricing-header"
     >
-      {/* Subtle animated background pattern */}
+      {/* Subtle animated background pattern - made more transparent */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-30" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-blue-50 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-50 to-transparent rounded-full blur-3xl opacity-40 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-20" />
+        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-white/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-white/20 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
       
       <div className="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-6xl">
         <div className="text-center space-y-8 max-w-5xl mx-auto">
           {/* Badge */}
           <div className="flex justify-center">
-            <div className="inline-flex items-center rounded-full border border-blue-200/60 bg-white/80 backdrop-blur-sm px-5 py-2.5 shadow-sm">
+            <div className="inline-flex items-center rounded-full border border-white/40 bg-white/20 backdrop-blur-sm px-5 py-2.5 shadow-sm">
               <Sparkles className="mr-2 h-4 w-4 text-blue-600" />
               <span className="text-sm font-semibold text-blue-700 tracking-wide">
                 AI-Powered Growth Solutions
@@ -53,7 +53,7 @@ export default function PricingHeader({ className = "" }: PricingHeaderProps) {
             ].map((item, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-200/60 shadow-sm opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]"
+                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30 shadow-sm opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]"
                 style={{ animationDelay: `${index * 0.2 + 0.5}s` }}
               >
                 <item.icon className="h-4 w-4 text-gray-600" />

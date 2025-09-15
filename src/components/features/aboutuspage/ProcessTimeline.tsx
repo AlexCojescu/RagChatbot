@@ -23,7 +23,7 @@ const timelineData = [
   {
     icon: <Repeat />,
     title: '4. Optimization & Scale',
-    description: 'Our partnership doesn’t end at launch. We monitor performance, gather data, and continuously optimize to ensure your digital assets deliver increasing value over time.'
+    description: 'Our partnership doesnt end at launch. We monitor performance, gather data, and continuously optimize to ensure your digital assets deliver increasing value over time.'
   }
 ];
 
@@ -53,7 +53,7 @@ export const ProcessTimeline = () => {
   };
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="py-20 sm:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Our Process</h2>
@@ -63,8 +63,8 @@ export const ProcessTimeline = () => {
         </div>
 
         <div className="relative max-w-3xl mx-auto">
-          {/* The vertical line */}
-          <div className="absolute left-6 top-6 h-full w-0.5 bg-gray-200" aria-hidden="true" />
+          {/* The vertical line - made more transparent */}
+          <div className="absolute left-6 top-6 h-full w-0.5 bg-white/40" aria-hidden="true" />
           
           <motion.ul
             className="space-y-12"
@@ -75,12 +75,11 @@ export const ProcessTimeline = () => {
           >
             {timelineData.map((item, index) => (
               <motion.li key={index} className="relative pl-16" variants={itemVariants}>
-                <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 text-blue-600">
+                <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 text-blue-600 shadow-lg">
                   {item.icon}
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-sm hover:bg-white/20 transition-all duration-300">
                   <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
-                  {/* FIXED: This was likely a <motion.p> without a closing tag. Changed to a standard <p> tag which is sufficient here. */}
                   <p className="mt-2 text-gray-600">{item.description}</p>
                 </div>
               </motion.li>

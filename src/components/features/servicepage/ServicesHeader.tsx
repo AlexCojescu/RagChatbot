@@ -43,17 +43,17 @@ const itemVariants: Variants = {
 
 const ServicesHeader = () => {
   return (
-    // UPDATED: Use pt (padding-top) instead of mt (margin-top) with white background
-    <div className="bg-white pt-16 sm:pt-20 lg:pt-24 xl:pt-32">
-    <motion.header 
-      className="bg-white"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    // UPDATED: Removed white background to show gradient
+    <div className="pt-16 sm:pt-20 lg:pt-24 xl:pt-32">
+      <motion.header 
+        className="relative"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="pt-36 sm:pt-48 pb-0 px-20 sm:px-32 lg:px-48 xl:px-64">
           
-          {/* Main "About Us" Title */}
+          {/* Main "Services" Title */}
           <motion.h1 
             variants={itemVariants}
             className="text-7xl sm:text-8xl lg:text-9xl font-light text-gray-900 tracking-tighter"
@@ -83,7 +83,7 @@ const ServicesHeader = () => {
                     <span className="absolute bottom-[-4px] left-0 w-full h-px bg-gray-400"></span>
                   )}
                   {!link.isFeatured && (
-                      <span className="absolute bottom-[-4px] left-0 w-0 h-px bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-[-4px] left-0 w-0 h-px bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
                   )}
                 </motion.a>
               ))}
@@ -94,6 +94,5 @@ const ServicesHeader = () => {
     </div>
   );
 };
-
 
 export default ServicesHeader;
