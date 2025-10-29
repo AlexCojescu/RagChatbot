@@ -31,7 +31,7 @@ const EnterpriseServicesHub: React.FC<EnterpriseServicesHubProps> = ({
   const serviceOptions: ServiceOption[] = [
     {
       id: 'automation',
-      label: 'Systems Automation',
+      label: 'Workflow Automation',
       shortLabel: 'Automation',
       component: SCS01,
       description: 'Optimize operations and streamline workflows with intelligent automation',
@@ -56,7 +56,7 @@ const EnterpriseServicesHub: React.FC<EnterpriseServicesHubProps> = ({
     },
     {
       id: 'consulting',
-      label: 'Strategy Consulting',
+      label: 'RAG Infastructure',
       shortLabel: 'Strategy',
       component: SCS04,
       description: 'Strategic AI transformation roadmaps and infrastructure optimization',

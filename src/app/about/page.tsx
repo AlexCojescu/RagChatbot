@@ -21,7 +21,7 @@ const ValueProposition = dynamic(() => import('@/components/features/aboutuspage
   ssr: true
 });
 
-const SocailProof = dynamic(() => import('@/components/features/aboutuspage/SocailProof'), {
+const SocailProof = dynamic(() => import('@/components/features/aboutuspage/SocailProof01'), {
   loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-40" />,
   ssr: true
 });
@@ -214,7 +214,7 @@ export default function Page() {
                 viewport={memoizedAnimations.slideUp.viewport}
                 transition={{...memoizedAnimations.slideUp.transition, delay: 0.4}}
               >
-                <SocailProof />
+             
               </m.div>
             </Suspense>
           </div>

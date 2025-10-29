@@ -170,7 +170,7 @@ export default function MissionVisionSection({ className = "" }: MissionVisionSe
               <div className="space-y-6 text-lg max-w-3xl mx-auto">
                 <p className="text-gray-600 leading-relaxed font-medium">
                   Our vision is to be the <strong className="text-gray-900 font-semibold">indispensable force</strong> behind our clients; success, 
-                  known for architecting and deploying digital ecosystems that don;t just work but accelerate business outcomes.
+                  known for architecting and deploying digital ecosystems that dont just work but accelerate business outcomes.
                 </p>
                 <p className="text-gray-600 leading-relaxed font-medium">
                   We aspire to create a future where <strong className="text-gray-900 font-semibold">every company</strong>, regardless of size, 

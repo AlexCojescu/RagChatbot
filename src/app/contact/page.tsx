@@ -5,6 +5,7 @@ import ContactHeader from "@/components/features/ContactHeader";
 import ContactFooter from "@/components/features/ContactFooter";
 
 import ChatbotWidget from "../../components/chatbotui/chat-widget/page";
+import ContactFormMain from "@/components/features/contactmemain";
 
 export default function Page() {
   return (
@@ -18,7 +19,7 @@ export default function Page() {
         {/* Grid Content */}
         <div className="flex items-center justify-center p-4 lg:p-8">
           <div className="w-full max-w-4xl lg:-mr-20">
-            <ContactForm />
+          <ContactFormMain />
           </div>
         </div>
         <div
