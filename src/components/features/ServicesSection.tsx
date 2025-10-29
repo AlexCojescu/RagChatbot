@@ -4,7 +4,7 @@
 // with other interactive elements. If just a static list, remove "use client".
 "use client";
 
-import { AccordionItem } from './AccordionItem'; // Adjust path as necessary
+import { AccordionItem } from './AccordianItem'; // Adjust path as necessary
 
 export const ServicesSection = () => {
   return (

@@ -106,7 +106,7 @@ const WebDev = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">Strategic Digital Foundation</h3>
             </div>
             <p className="text-gray-600 leading-relaxed text-lg">
-              We don;t just build websites; we engineer your central digital asset. It;s the stable, reliable core from which all marketing and sales activities will operate.
+              We dont just build websites; we engineer your central digital asset. It;s the stable, reliable core from which all marketing and sales activities will operate.
             </p>
           </motion.div>
 

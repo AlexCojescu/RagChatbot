@@ -21,10 +21,7 @@ const ValueProposition = dynamic(() => import('@/components/features/aboutuspage
   ssr: true
 });
 
-const SocailProof = dynamic(() => import('@/components/features/aboutuspage/SocailProof01'), {
-  loading: () => <div className="animate-pulse bg-gray-100 rounded-lg h-40" />,
-  ssr: true
-});
+// REMOVED: SocailProof import since it's not being used
 
 // Updated ChatbotWidget import with better error handling
 const ChatbotWidget = dynamic(() => import("@/components/chatbotui/chat-widget/page"), {
@@ -206,17 +203,7 @@ export default function Page() {
 
             <Separator />
 
-            <Suspense fallback={<div className="animate-pulse bg-gray-100 rounded-lg h-40 mb-8" />}>
-              <m.div
-                variants={memoizedAnimations.slideUp.variants}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={memoizedAnimations.slideUp.viewport}
-                transition={{...memoizedAnimations.slideUp.transition, delay: 0.4}}
-              >
-             
-              </m.div>
-            </Suspense>
+            {/* REMOVED: Empty SocailProof section */}
           </div>
         </m.header>
 
@@ -231,7 +218,7 @@ export default function Page() {
             viewport={memoizedAnimations.slideUp.viewport}
             transition={{...memoizedAnimations.slideUp.transition, delay: 0.1}}
           >
-        
+            {/* Add your process content here */}
           </m.section>
         </main>
       </div>
