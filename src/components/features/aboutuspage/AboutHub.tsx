@@ -23,7 +23,7 @@ const AboutHub: React.FC = () => {
             About Programmatic
           </p>
           <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold text-slate-900 leading-relaxed sm:leading-snug max-w-5xl">
-            We are systems integrators dedicated to fiber and wireless ISPs. We
+            We are systems integrators dedicated to Internet Service Providers. We
             don't just implement automations. We architect a scalable operating
             system that lives within your existing tools, workflows, and SOPs to
             turn operational chaos into a predictable, high-performance engine.

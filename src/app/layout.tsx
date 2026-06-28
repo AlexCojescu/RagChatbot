@@ -52,10 +52,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Ensure NO WHITESPACE between <head> and its content/closing tag */}
-      <head><link rel="preload" href="/HeroVid.mp4" as="video" type="video/mp4" /></head>
-      {/* If you add more to the head, keep it tightly packed: */}
-      {/* <head><link rel="preload" href="/HeroVid.mp4" as="video" type="video/mp4" /><link rel="stylesheet" href="styles.css" /></head> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

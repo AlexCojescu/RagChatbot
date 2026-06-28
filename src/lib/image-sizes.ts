@@ -6,5 +6,6 @@ export const IMAGE_SIZES = {
   partnerPortrait: "(max-width: 768px) 256px, 384px",
   pricingLogo: "80px",
   calmHero: "(max-width: 768px) 100vw, 1200px",
+  heroSlide: "100vw",
   beamIcon: "80px",
 } as const;
